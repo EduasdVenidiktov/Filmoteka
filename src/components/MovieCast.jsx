@@ -1,61 +1,55 @@
-import { useParams, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getCastMovies } from "../../Api";
 
-function MovieCast() {
+export default function MovieCast() {
   const { movieId } = useParams();
+  const [cast, setCast] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!movieId) return;
-    // Ваш код для отримання даних про акторів фільма
+    const controller = new AbortController();
+
+    async function fetchCast() {
+      try {
+        const castData = await getCastMovies(controller, movieId);
+        setCast(castData.cast); // Обратите внимание на .cast, потому что объект ответа содержит поле cast, в котором находится массив актеров
+      } catch (error) {
+        if (error.code !== "ERR_CANCELED") {
+          setError(true);
+        }
+      }
+    }
+
+    fetchCast();
+
+    return () => {
+      controller.abort();
+    };
   }, [movieId]);
 
-  // Решта вашого коду
+  if (cast.length === 0) {
+    return <div>Loading cast...</div>;
+  }
+
+  return (
+    <section>
+      <h2>Cast</h2>
+      {error && <p>Ooooppss, help!</p>}
+
+      <ul>
+        {cast.map((actor) => (
+          <li key={actor.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} // Используйте поле profile_path для URL изображения актера
+              alt={actor.name}
+              style={{ width: 100, height: 150 }} // Размеры изображения
+            />
+            <div>{actor.name}</div>
+            <div>Character: {actor.character}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
-
-export default MovieCast;
-
-// import { useParams } from "react-router-dom";
-// import { useEffect, useState } from "react";
-// import { getCastMovies } from "../../Api";
-
-// function MovieCast() {
-//   const { movieId } = useParams();
-//   const [cast, setCast] = useState([]);
-
-//   useEffect(() => {
-//     const controller = new AbortController();
-
-//     async function fetchCast() {
-//       try {
-//         const castData = await getCastMovies(controller, movieId);
-//         setCast(castData);
-//       } catch (error) {
-//         console.error("Error fetching cast:", error);
-//       }
-//     }
-
-//     fetchCast();
-
-//     return () => {
-//       controller.abort();
-//     };
-//   }, [movieId]);
-
-//   if (cast.length === 0) {
-//     return <div>Loading cast...</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h2>Cast</h2>
-//       <ul>
-//         {cast.map((actor) => (
-//           <li key={actor.id}>{actor.name}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default MovieCast;
-
-//https://api.themoviedb.org/3/movie/{movie_id}/credits

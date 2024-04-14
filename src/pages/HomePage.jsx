@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import MovieList from "../components/MovieList/MovieList";
+import { MovieList } from "../components/MovieList/MovieList";
 import { getTrendingMovies } from "../../Api";
 
 export default function HomePage() {

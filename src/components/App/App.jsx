@@ -4,8 +4,8 @@ import NotFoundPage from "../../pages/NotFoundPage";
 import MovieDetailsPage from "../../pages/MovieDetailsPage";
 import MoviesPage from "../../pages/MoviesPage";
 import HomePage from "../../pages/HomePage";
-import { MovieCast } from "../MovieCast";
-import { MovieReviews } from "../MovieReviews";
+import MovieCast from "../MovieCast";
+import MovieReviews from "../MovieReviews";
 
 //===================МАРШРУТИ =============================
 function App() {
