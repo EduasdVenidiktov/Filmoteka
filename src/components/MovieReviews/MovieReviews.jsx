@@ -38,7 +38,7 @@ export default function MovieReviews() {
 
   return (
     <section>
-      {error && <p>Ooooppss, help!</p>};
+      {error && <p>Ooooppss, help!</p>}
       <ul>
         {reviews.map((review) => (
           <li key={review.id}>

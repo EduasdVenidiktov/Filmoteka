@@ -1,9 +1,10 @@
 .container {
-  margin-left: 40px;
+  margin: 0 auto;
   margin-top: 40px;
   background: rgb(186, 186, 241);
   border-radius: 16px;
   padding: 20px;
+  width: 1440px;
 }
 h1 {
   margin-left: 40px;

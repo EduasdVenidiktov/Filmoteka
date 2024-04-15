@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getSearchMovies } from "../../../Api";
 import css from "./SearchForm.module.css";
+import toast, { Toaster } from "react-hot-toast";
 
 export function SearchForm() {
   const navigate = useNavigate(); // Функція навігації
@@ -15,7 +16,7 @@ export function SearchForm() {
     if (value !== "") {
       navigate(`/movies?query=${encodeURIComponent(value)}`); // Переходимо на сторінку фільмів з новим фільтром
     } else {
-      console.log("Будь ласка, введіть пошуковий запит.");
+      toast.error("Будь ласка, введіть пошуковий запит.");
     }
   };
 
@@ -39,14 +40,14 @@ export function SearchForm() {
         <input
           type="text"
           name="query" // Ім'я для отримання значення з форми
-          placeholder="Пошук фільмів..."
+          placeholder="Search movies..."
         />
         <button type="submit" className={css.btn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32px"
             height="32px"
-            viewBox="0 0 24 24"
+            viewBox="0 0 22 22"
           >
             <path
               d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
@@ -57,6 +58,7 @@ export function SearchForm() {
           </svg>
         </button>
       </div>
+      <Toaster position="top-center" />
     </form>
   );
 }
