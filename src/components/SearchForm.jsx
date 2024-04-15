@@ -7,8 +7,14 @@ export function SearchForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(value); // Передаем значение формы в функцию onSubmit
-    navigate(`/movies?query=${value}`); // Переходим на страницу фильмов с новым фильтром
+    if (value.trim() !== "") {
+      // Проверяем, что значение не пустое
+      onSubmit(value); // Передаем значение формы в функцию onSubmit
+      navigate(`/movies?query=${encodeURIComponent(value)}`); // Переходим на страницу фильмов с новым фильтром
+    } else {
+      // В случае пустого значения можно вывести сообщение или выполнить другие действия
+      console.log("Пожалуйста, введите поисковый запрос.");
+    }
   };
 
   return (

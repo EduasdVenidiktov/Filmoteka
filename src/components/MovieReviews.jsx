@@ -28,7 +28,7 @@ export default function MovieReviews() {
   }, [movieId]);
 
   if (reviews.length === 0) {
-    return <div>Loading cast...</div>;
+    return <div>We don`t any reviews for this movie.</div>;
   }
 
   return (

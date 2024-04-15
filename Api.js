@@ -22,9 +22,12 @@ export const getTrendingMovies = async (abortController) => {
 };
 
 //=============функція пошуку фільмів
-export const getSearchMovies = async (abortController) => {
+export const getSearchMovies = async (abortController, query) => {
   const response = await axios.get(`${baseUrl}/search/movie`, {
-    params,
+    params: {
+      ...params, // Включаем общие параметры запроса
+      query: query, // Добавляем параметр query
+    },
     signal: abortController ? abortController.signal : undefined,
   });
   return response.data.results;
