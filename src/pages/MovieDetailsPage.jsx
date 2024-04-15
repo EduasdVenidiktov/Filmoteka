@@ -2,11 +2,12 @@ import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDetailsMovies } from "../../Api";
 
-function MovieDetailsPage() {
+export default function MovieDetailsPage() {
   const { movieId } = useParams(); // Отримуємо значення movieId з URL
   const [movie, setMovie] = useState(null); // Стан для зберігання даних про фільм
   const [error, setError] = useState(false);
   const location = useLocation(); // Отримуємо поточне місцезнаходження
+  const backLinkHref = location.state ?? "/movies";
 
   useEffect(() => {
     const controller = new AbortController();
@@ -33,11 +34,9 @@ function MovieDetailsPage() {
     return <div>Loading...</div>; // Поки дані завантажуються, відображаємо індикатор завантаження
   }
 
-  const backLinkState = { from: location.pathname }; // Сохраняем текущий URL в объекте состояния
-
   return (
     <main>
-      <Link to={{ pathname: "/", state: backLinkState }}>Go back</Link>
+      <Link to={backLinkHref}>Go back</Link>
       <div>
         (MovieDetails) - {movie.name} - {movieId}
       </div>
@@ -68,5 +67,3 @@ function MovieDetailsPage() {
     </main>
   );
 }
-
-export default MovieDetailsPage;
