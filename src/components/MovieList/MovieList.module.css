@@ -1,2 +1,13 @@
 .detailsLink {
 }
+
+.list {
+}
+
+.link {
+  text-decoration: none; /* Убираем подчёркивание */
+  font-size: 20px;
+}
+li {
+  padding-bottom: 10px; /* Устанавливаем расстояние между элементами списка */
+}

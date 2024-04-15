@@ -1,0 +1,39 @@
+.mainContainer {
+  margin: 40px;
+}
+
+.goBack {
+  font-size: 30px;
+}
+
+img {
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.blockDetails {
+  display: flex;
+  margin-bottom: 60px;
+}
+.textDetails {
+  margin-left: 40px;
+  font-size: 20px;
+}
+
+.edInfoDetails {
+  font-style: 40px;
+}
+.link {
+  text-decoration: none; /* Убираем подчёркивание */
+  font-size: 20px;
+  list-style-type: none; /* Убираем маркеры списка */
+}
+ul {
+  list-style-type: none; /* Убираем маркеры с изображений */
+}
+li {
+  padding-bottom: 10px; /* Устанавливаем расстояние между элементами списка */
+}
+
+h3 {
+  margin-left: 40px;
+}

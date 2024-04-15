@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { getSearchMovies } from "../../Api";
 import MovieList from "../components/MovieList/MovieList";
-import { SearchForm } from "../components/SearchForm";
+import { SearchForm } from "../components/SearchForm/SearchForm";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -45,7 +45,6 @@ export default function MoviesPage() {
     <main>
       <SearchForm onSubmit={handleSubmit} />
       {error && <p>Ooooppss, help!</p>}
-      <h2>MoviesPage</h2>
       <MovieList movies={movies} />
     </main>
   );

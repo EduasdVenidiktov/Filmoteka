@@ -1,6 +1,16 @@
-.nav {
+.navButton {
   display: flex;
-  gap: 4px;
+  gap: 30px;
+  list-style: none; /* Удаляем стандартные маркеры списка */
+  font-size: 40px;
+}
+.navButton :hover {
+  font-size: 1.02em;
+  color: brown;
+}
+
+.navButton :active {
+  color: red;
 }
 
 .link {

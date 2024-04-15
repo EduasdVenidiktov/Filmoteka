@@ -8,7 +8,7 @@ const buildLinkClass = ({ isActive }) => {
 const Navigation = () => {
   return (
     <nav>
-      <ul className={css.nav}>
+      <ul className={css.navButton}>
         <li>
           <NavLink to="/" className={buildLinkClass}>
             Home

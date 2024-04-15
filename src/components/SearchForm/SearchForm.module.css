@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  justify-content: flex-start; /* Выравнивание по левому краю */
+
+  border-radius: 20px;
+  /* border: 3px solid blue; */
+  padding: 10px;
+  /* margin: 0 auto; Центрирование по горизонтали */
+}
+
+.inputBtn {
+  border: 1px solid;
+  border-radius: 20px;
+  align-items: center; /* Выравнивание по вертикали внутри .inputBtn */
+}
+input {
+  margin: 10px;
+  border: transparent;
+  width: 500px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(186, 186, 241);
+}
+
+input:hover {
+  background-color: rgb(221, 221, 245);
+  border: 1px solid transparent;
+}
+
+.btn {
+  background-color: rgb(186, 186, 241);
+  border: transparent;
+  margin: 10px;
+  align-items: center; /* Выравнивание по вертикали внутри .inputBtn */
+}
+.btn:hover {
+  transform: scale(1.1);
+  border: transparent;
+}
