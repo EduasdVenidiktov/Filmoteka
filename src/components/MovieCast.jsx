@@ -13,7 +13,7 @@ export default function MovieCast() {
     async function fetchCast() {
       try {
         const castData = await getCastMovies(controller, movieId);
-        setCast(castData.cast); // Обратите внимание на .cast, потому что объект ответа содержит поле cast, в котором находится массив актеров
+        setCast(castData.cast); //  в cast, знаходиться массив акторів
       } catch (error) {
         if (error.code !== "ERR_CANCELED") {
           setError(true);

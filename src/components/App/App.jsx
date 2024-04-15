@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 import css from "./App.module.css";
 
 import MovieCast from "../MovieCast";
-import MovieReviews from "../MovieReviews";
+import MovieReviews from "../MovieReviews/MovieReviews";
 import { lazy, Suspense } from "react";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));

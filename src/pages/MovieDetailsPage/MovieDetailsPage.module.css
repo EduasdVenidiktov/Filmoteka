@@ -12,7 +12,6 @@ img {
 }
 .blockDetails {
   display: flex;
-  margin-bottom: 60px;
 }
 .textDetails {
   margin-left: 40px;

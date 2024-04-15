@@ -7,7 +7,7 @@ export default function HomePage() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
 
-  const [params] = useSearchParams(); // Вилучили змінну setParams, оскільки вона не використовується
+  const [params] = useSearchParams(); // Вилучив змінну setParams, оскільки вона не використовується
 
   const filter = params.get("filter") ?? "";
 

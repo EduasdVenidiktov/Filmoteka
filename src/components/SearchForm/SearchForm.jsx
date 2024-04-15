@@ -4,42 +4,42 @@ import { getSearchMovies } from "../../../Api";
 import css from "./SearchForm.module.css";
 
 export function SearchForm() {
-  const navigate = useNavigate(); // Функция навигации
+  const navigate = useNavigate(); // Функція навігації
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const value = form.elements.query.value.trim(); // Получаем значение из инпута по имени и удаляем лишние пробелы
-    form.reset(); // Сбрасываем форму
+    const value = form.elements.query.value.trim(); // Отримуємо значення з інпута за ім'ям та видаляємо зайві пробіли
+    form.reset(); // Скидаємо форму
 
     if (value !== "") {
-      navigate(`/movies?query=${encodeURIComponent(value)}`); // Переходим на страницу фильмов с новым фильтром
+      navigate(`/movies?query=${encodeURIComponent(value)}`); // Переходимо на сторінку фільмів з новим фільтром
     } else {
-      console.log("Пожалуйста, введите поисковый запрос.");
+      console.log("Будь ласка, введіть пошуковий запит.");
     }
   };
 
   useEffect(() => {
-    // Загрузка фильмов при монтировании компонента
+    // Завантаження фільмів при монтуванні компонента
     const fetchData = async () => {
       try {
-        const movies = await getSearchMovies(""); // Пустой запрос при монтировании
-        console.log("Найденные фильмы при монтировании:", movies);
+        const movies = await getSearchMovies(""); // Порожній запит при монтуванні
+        console.log("Знайдені фільми при монтуванні:", movies);
       } catch (error) {
-        console.error("Ошибка при загрузке фильмов:", error);
+        console.error("Помилка при завантаженні фільмів:", error);
       }
     };
 
     fetchData();
-  }, []); // Пустой массив зависимостей для вызова useEffect только один раз при монтировании
+  }, []); // Порожній масив залежностей для виклику useEffect лише один раз при монтуванні
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
       <div className={css.inputBtn}>
         <input
           type="text"
-          name="query" // Имя для получения значения из формы
-          placeholder="Search movies..."
+          name="query" // Ім'я для отримання значення з форми
+          placeholder="Пошук фільмів..."
         />
         <button type="submit" className={css.btn}>
           <svg
