@@ -25,7 +25,7 @@ export function SearchForm() {
     const fetchData = async () => {
       try {
         const movies = await getSearchMovies(""); // Порожній запит при монтуванні
-        console.log("Знайдені фільми при монтуванні:", movies);
+        console.log("Знайдені фільми:", movies); // Виводимо фільми в консоль
       } catch (error) {
         console.error("Помилка при завантаженні фільмів:", error);
       }
