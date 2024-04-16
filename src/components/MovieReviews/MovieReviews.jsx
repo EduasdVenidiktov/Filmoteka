@@ -31,7 +31,7 @@ export default function MovieReviews() {
   if (reviews.length === 0) {
     return (
       <p className={css.textSorry}>
-        Soory, we don`t any reviews for this movie.
+        Sorry, we don`t any reviews for this movie.
       </p>
     );
   }
