@@ -1,7 +1,7 @@
 .navButton {
   display: flex;
   gap: 30px;
-  list-style: none; /* Удаляем стандартные маркеры списка */
+  list-style: none; /* Видалення  стандартних маркерів списку */
   font-size: 40px;
 }
 .navButton :hover {

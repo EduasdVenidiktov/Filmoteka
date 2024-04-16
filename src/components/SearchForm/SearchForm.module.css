@@ -9,9 +9,9 @@
 .inputBtn {
   border: 1px solid;
   border-radius: 20px;
-  align-items: center; /* Выравнивание по вертикали внутри .inputBtn */
-  margin-top: 10px; /* Добавляем верхний отступ */
-  margin-bottom: 10px; /* Добавляем нижний отступ */
+  align-items: center; /* вирівнювання по вертикалі внутрі .inputBtn */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 input {
   margin: 10px;

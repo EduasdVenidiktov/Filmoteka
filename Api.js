@@ -18,15 +18,15 @@ export const getTrendingMovies = async (abortController) => {
     params,
     signal: abortController ? abortController.signal : undefined,
   });
-  return response.data.results; // Верните результат из функции
+  return response.data.results; // Повернення хапиту з функції
 };
 
 //=============функція пошуку фільмів
 export const getSearchMovies = async (abortController, query) => {
   const response = await axios.get(`${baseUrl}/search/movie`, {
     params: {
-      ...params, // Включаем общие параметры запроса
-      query: query, // Добавляем параметр query
+      ...params, // Вмикаємо звгвльні параметри запиту
+      query: query, // Додаємо параметр query
     },
     signal: abortController ? abortController.signal : undefined,
   });

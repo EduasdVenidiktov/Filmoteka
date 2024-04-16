@@ -42,7 +42,7 @@ export default function MovieCast() {
             <img
               src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} //  profile_path для URL зображенн актора
               alt={actor.name}
-              style={{ width: 100, height: 150 }} // Размеры изображения
+              style={{ width: 100, height: 150 }} // Розміри зображения
             />
 
             <h4>{actor.name}</h4>
