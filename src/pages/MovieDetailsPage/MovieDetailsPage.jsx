@@ -40,7 +40,7 @@ export default function MovieDetailsPage() {
   }, [location.state]);
 
   if (!movie) {
-    return <div>Loading...</div>; // Поки дані завантажуються, відображаємо індикатор завантаження
+    return <div>Loading...</div>; // Поки дані завантажуються, відображається індикатор завантаження
   }
 
   return (
